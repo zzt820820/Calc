@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Calc</string>
+    <string name="choice_profile">Select</string>
+    <string name="new_profile">New</string>
+    <string name="query_paper">Query</string>
+    <string name="next">Next</string>
+    <string name="mode_total_time">Total time</string>
+    <string name="mode_per_time">Per time</string>
+    <string name="time_set">Time Set</string>
+    <string name="time_hour">Hour</string>
+    <string name="time_min">Min</string>
+    <string name="time_sec">Sec</string>
+    <string name="add_set">Add Set</string>
+    <string name="enable">Enable</string>
+    <string name="range">Range:</string>
+    <string name="to">to</string>
+    <string name="op_nums">Num:</string>
+    <string name="bracket">Bracket</string>
+    <string name="sub_set">Sub Set</string>
+    <string name="mul_set">Mul Set</string>
+    <string name="mix_set">Mix Set</string>
+    <string name="add">Add</string>
+    <string name="sub">Sub</string>
+    <string name="mul">Mul</string>
+    <string name="num_0">0</string>
+    <string name="num_1">1</string>
+    <string name="num_2">2</string>
+    <string name="num_3">3</string>
+    <string name="num_4">4</string>
+    <string name="num_5">5</string>
+    <string name="num_6">6</string>
+    <string name="num_7">7</string>
+    <string name="num_8">8</string>
+    <string name="num_9">9</string>
+    <string name="result">Mark</string>
+    <string name="total_num">Num:</string>
+    <string name="total_time">Time:</string>
+    <string name="total_correct">Correct:</string>
+    <string name="total_wrong">Wrong:</string>
+
+</resources>
