@@ -2,6 +2,8 @@
 <resources>
 
     <string name="app_name">Calc</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
     <string name="choice_profile">Select</string>
     <string name="new_profile">New</string>
     <string name="query_paper">Query</string>
@@ -24,6 +26,8 @@
     <string name="add">Add</string>
     <string name="sub">Sub</string>
     <string name="mul">Mul</string>
+    <string name="num_del">Del</string>
+    <string name="num_clr">Clr</string>
     <string name="num_0">0</string>
     <string name="num_1">1</string>
     <string name="num_2">2</string>
@@ -39,5 +43,19 @@
     <string name="total_time">Time:</string>
     <string name="total_correct">Correct:</string>
     <string name="total_wrong">Wrong:</string>
+    <string name="invalid_mode">Please choose a mode.</string>
+    <string name="hour_empty">Hour is empty.</string>
+    <string name="min_empty">Min is empty.</string>
+    <string name="sec_empty">Sec is empty.</string>
+    <string name="from_empty">From is empty.</string>
+    <string name="to_empty">To is empty.</string>
+    <string name="num_empty">Num is empty.</string>
+    <string name="invalid_from_to">From must smaller than To.</string>
+    <string name="invalid_num">Num must between 2 and 5.</string>
+    <string name="invalid_mix">Select at least two operations.</string>
+    <string name="invalid_mixnum">Num must between 3 and 5.</string>
+    <string name="start_exam">Press %1$s to start.</string>
+    <string name="remain_time">Remian time:</string>
+    <string name="equal">=</string>
 
 </resources>

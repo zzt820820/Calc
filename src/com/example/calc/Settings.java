@@ -3,6 +3,11 @@ package com.example.calc;
 public class Settings {
 	static public final int MODE_TOTAL_TIME = 1;
 	static public final int MODE_PER_TIME = 2;
+	
+	static public final int MIX_ADD = 0x01;
+	static public final int MIX_SUB = 0x02;
+	static public final int MIX_MUL = 0x04;
+	
 	public int mMode;
 	public int mTimeHour;
 	public int mTimeMin;
@@ -28,5 +33,6 @@ public class Settings {
 	
 	public boolean mMixEnable;
 	public int mMixFlag;
+	public int mMixNum;
 	public boolean mMixBracket;
 }

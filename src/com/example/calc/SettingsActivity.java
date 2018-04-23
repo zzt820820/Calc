@@ -1,6 +1,8 @@
 package com.example.calc;
 
 import android.app.Activity;
+import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -44,33 +46,89 @@ public class SettingsActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View view) {
-		// TODO Auto-generated method stub
+		Fragment frag; 
+		ModeFragment mode_frag;
+		TimeFragment time_frag;
+		AddFragment add_frag;
+		SubFragment sub_frag;
+		MulFragment mul_frag;
+		MixFragment mix_frag;
+		boolean checkok = false;
+		
 		switch(mStep) {
 		case STEP_MODE:
-			TimeFragment time_frag = new TimeFragment();
-			getFragmentManager().beginTransaction().replace(R.id.setting_frag, time_frag, "time").commit();
+			frag = getFragmentManager().findFragmentByTag("mode");
+			if(frag != null && frag instanceof ModeFragment) {
+				mode_frag = (ModeFragment)frag;
+				if(mode_frag.check()) {
+					checkok = true;
+					time_frag = new TimeFragment();
+					getFragmentManager().beginTransaction().replace(R.id.setting_frag, time_frag, "time").commit();
+				}
+			}
+			
 			break;
 		case STEP_TIME:
-			AddFragment add_frag = new AddFragment();
-			getFragmentManager().beginTransaction().replace(R.id.setting_frag, add_frag, "add").commit();
+			frag = getFragmentManager().findFragmentByTag("time");
+			if(frag != null && frag instanceof TimeFragment) {
+				time_frag = (TimeFragment)frag;
+				if(time_frag.check()) {
+					checkok = true;
+					add_frag = new AddFragment();
+					getFragmentManager().beginTransaction().replace(R.id.setting_frag, add_frag, "add").commit();
+				}
+			}
 			break;
 		case STEP_ADD:
-			SubFragment sub_frag = new SubFragment();
-			getFragmentManager().beginTransaction().replace(R.id.setting_frag, sub_frag, "sub").commit();
+			frag = getFragmentManager().findFragmentByTag("add");
+			if(frag != null && frag instanceof AddFragment) {
+				add_frag = (AddFragment)frag;
+				if(add_frag.check()) {
+					checkok = true;
+					sub_frag = new SubFragment();
+					getFragmentManager().beginTransaction().replace(R.id.setting_frag, sub_frag, "sub").commit();
+				}
+			}
 			break;
 		case STEP_SUB:
-			MulFragment mul_frag = new MulFragment();
-			getFragmentManager().beginTransaction().replace(R.id.setting_frag, mul_frag, "mul").commit();
+			frag = getFragmentManager().findFragmentByTag("sub");
+			if(frag != null && frag instanceof SubFragment) {
+				sub_frag = (SubFragment)frag;
+				if(sub_frag.check()) {
+					checkok = true;
+					mul_frag = new MulFragment();
+					getFragmentManager().beginTransaction().replace(R.id.setting_frag, mul_frag, "mul").commit();
+				}
+			}
 			break;
 		case STEP_MUL:
-			MixFragment mix_frag = new MixFragment();
-			getFragmentManager().beginTransaction().replace(R.id.setting_frag, mix_frag, "mix").commit();
+			frag = getFragmentManager().findFragmentByTag("mul");
+			if(frag != null && frag instanceof MulFragment) {
+				mul_frag = (MulFragment)frag;
+				if(mul_frag.check()) {
+					checkok = true;
+					mix_frag = new MixFragment();
+					getFragmentManager().beginTransaction().replace(R.id.setting_frag, mix_frag, "mix").commit();
+				}
+			}
 			break;
 		case STEP_MIX:
-
+			frag = getFragmentManager().findFragmentByTag("mix");
+			if(frag != null && frag instanceof MixFragment) {
+				mix_frag = (MixFragment)frag;
+				if(mix_frag.check()) {
+					Intent intent = new Intent(this, PaperActivity.class);
+					String sInfoFormat = getResources().getString(R.string.start_exam);
+					String ok = this.getString(R.string.ok);
+					String sFinalInfo=String.format(sInfoFormat, ok); 
+					Utils.startActivity(this, sFinalInfo, intent);
+				}
+			}
 			break;
 		}
-		mStep++;
+		if(checkok) {
+			mStep++;
+		}
 	}
 
 }

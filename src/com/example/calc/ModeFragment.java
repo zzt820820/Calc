@@ -8,12 +8,14 @@ import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
 
-public class ModeFragment extends Fragment implements OnCheckedChangeListener {
+public class ModeFragment extends Fragment implements OnCheckedChangeListener, ContentCheck {
 
+	Settings mSet;
 	RadioGroup mModeSelect;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		mSet = AppContext.getSettings();
 		View view = inflater.inflate(R.layout.mode_choice, container, false);
 		mModeSelect = (RadioGroup)view.findViewById(R.id.mode_select);
 		mModeSelect.setOnCheckedChangeListener(this);
@@ -22,18 +24,26 @@ public class ModeFragment extends Fragment implements OnCheckedChangeListener {
 
 	@Override
 	public void onCheckedChanged(RadioGroup group, int checkedId) {
-		Settings set = AppContext.getSettings();
-		if(set == null) return;
+		if(mSet == null) return;
 		
 		switch(checkedId) {
 		case R.id.mode_per_time:
-			set.mMode = Settings.MODE_PER_TIME;
+			mSet.mMode = Settings.MODE_PER_TIME;
 			break;
 		case R.id.mode_total_time:
-			set.mMode = Settings.MODE_TOTAL_TIME;
+			mSet.mMode = Settings.MODE_TOTAL_TIME;
 			break;
 			
 		}
+	}
+
+	@Override
+	public boolean check() {
+		if(mSet.mMode == 0) {
+			Utils.Alert(this.getActivity(), R.string.invalid_mode);
+			return false;
+		}
+		return true;
 	}
 
 }

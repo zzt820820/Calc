@@ -4,79 +4,89 @@
     android:gravity="center|top"
     android:orientation="vertical" >
 	<LinearLayout
-	    android:layout_width="wrap_content"
+	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    android:orientation="horizontal"
 	    >
 	        <TextView
-	        android:id="@+id/time_hour"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
+	        android:text="@string/remain_time"
+	        android:layout_gravity="left"
+	        android:layout_marginLeft="20dp"
+	        android:layout_marginRight="20dp"
 	        />
 	        <TextView
+	        android:id="@+id/remain_time"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="@string/time_hour" />
+	        android:text="00:00:00"
+	         />
 
-	        <TextView
-	        android:id="@+id/time_min"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        />
-
-	        <TextView
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="@string/time_min" />
-	        <TextView
-	        android:id="@+id/time_sec"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        />
-	        <TextView
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="@string/time_sec" />
 	</LinearLayout>
-
+	<View android:layout_width="1dp" android:layout_height="0dp" android:layout_weight="1"/>
 	<LinearLayout
-	    android:layout_width="wrap_content"
+	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
+	    android:paddingLeft="20dp"
+	    android:paddingRight="20dp"
 	    android:orientation="horizontal"
 	    >
 	    <TextView
 	    android:id="@+id/question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:gravity="right"
+        android:textSize="@dimen/ques_size"
+        android:text="aaa"
          />
+	    <TextView 
+	        android:layout_width="0dp" 
+	        android:layout_height="wrap_content" 
+	        android:layout_weight="1" 
+	        android:textSize="@dimen/ques_size"
+	        android:text="@string/equal"
+	        android:gravity="center"
+	        />
 	    <TextView
 	    android:id="@+id/answer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:textSize="@dimen/ques_size"
+        android:text="bb"
          />
 
 	</LinearLayout>
+	<View android:layout_width="1dp" android:layout_height="0dp" android:layout_weight="1"/>
 	<LinearLayout
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:orientation="horizontal"
 	    >
-	    <TextView
+	    <Button
 	    android:id="@+id/num_1"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/pad_size"
+        android:layout_height="@dimen/pad_size"
+        android:gravity="center"
+        android:background="@drawable/num_pad"
         android:text="@string/num_1"
          />
-	    <TextView
+	    <Button
 	    android:id="@+id/num_2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/pad_size"
+        android:layout_height="@dimen/pad_size"
+        android:gravity="center"
+        android:background="@drawable/num_pad"
         android:text="@string/num_2"
          />
-	    <TextView
+	    <Button
 	    android:id="@+id/num_3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/pad_size"
+        android:layout_height="@dimen/pad_size"
+        android:gravity="center"
+        android:background="@drawable/num_pad"
         android:text="@string/num_3"
          />
 
@@ -86,22 +96,28 @@
 	    android:layout_height="wrap_content"
 	    android:orientation="horizontal"
 	    >
-	    <TextView
+	    <Button
 	    android:id="@+id/num_4"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/pad_size"
+        android:layout_height="@dimen/pad_size"
+        android:gravity="center"
+        android:background="@drawable/num_pad"
         android:text="@string/num_4"
          />
-	    <TextView
+	    <Button
 	    android:id="@+id/num_5"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/pad_size"
+        android:layout_height="@dimen/pad_size"
+        android:gravity="center"
+        android:background="@drawable/num_pad"
         android:text="@string/num_5"
          />
-	    <TextView
+	    <Button
 	    android:id="@+id/num_6"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/pad_size"
+        android:layout_height="@dimen/pad_size"
+        android:gravity="center"
+        android:background="@drawable/num_pad"
         android:text="@string/num_6"
          />
 
@@ -111,22 +127,28 @@
 	    android:layout_height="wrap_content"
 	    android:orientation="horizontal"
 	    >
-	    <TextView
+	    <Button
 	    android:id="@+id/num_7"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/pad_size"
+        android:layout_height="@dimen/pad_size"
+        android:gravity="center"
+        android:background="@drawable/num_pad"
         android:text="@string/num_7"
          />
-	    <TextView
+	    <Button
 	    android:id="@+id/num_8"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:text="@string/num_9"
+        android:layout_width="@dimen/pad_size"
+        android:layout_height="@dimen/pad_size"
+        android:gravity="center"
+        android:background="@drawable/num_pad"
+        android:text="@string/num_8"
          />
-	    <TextView
+	    <Button
 	    android:id="@+id/num_9"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/pad_size"
+        android:layout_height="@dimen/pad_size"
+        android:gravity="center"
+        android:background="@drawable/num_pad"
         android:text="@string/num_9"
          />
 
@@ -136,21 +158,38 @@
 	    android:layout_height="wrap_content"
 	    android:orientation="horizontal"
 	    >
-	    <TextView
+	    <Button
 	    android:id="@+id/num_0"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/pad_size"
+        android:layout_height="@dimen/pad_size"
+        android:gravity="center"
+        android:background="@drawable/num_pad"
         android:text="@string/num_0"
          />
-
+	     <Button
+	    android:id="@+id/num_del"
+        android:layout_width="@dimen/pad_size"
+        android:layout_height="@dimen/pad_size"
+        android:gravity="center"
+        android:background="@drawable/num_pad"
+        android:text="@string/num_del"
+         />
+	      <Button
+	    android:id="@+id/num_clr"
+        android:layout_width="@dimen/pad_size"
+        android:layout_height="@dimen/pad_size"
+        android:gravity="center"
+        android:background="@drawable/num_pad"
+        android:text="@string/num_clr"
          />
 
 	</LinearLayout>
 
-    <Button
-        android:id="@+id/next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/next" />
+	<Button
+	    android:id="@+id/next"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="right"
+	    android:text="@string/next" />
 
 </LinearLayout>
