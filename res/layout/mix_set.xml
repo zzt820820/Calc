@@ -44,6 +44,40 @@
 	    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/range" />
+	        <EditText
+	            android:id="@+id/from_num"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1"
+	            android:inputType="numberDecimal" >
+
+	            <requestFocus />
+	        </EditText>
+	        <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/to" />
+
+	        <EditText
+	            android:id="@+id/to_num"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1"
+	            android:inputType="numberDecimal" >
+
+	            <requestFocus />
+	        </EditText>
+
+	</LinearLayout>
+	<LinearLayout
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    >
+	    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/op_nums" />
 	        <EditText
 	            android:id="@+id/op_nums"

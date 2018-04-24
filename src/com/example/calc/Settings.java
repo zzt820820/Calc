@@ -17,22 +17,24 @@ public class Settings {
 	public int mAddFrom;
 	public int mAddTo;
 	public int mAddNum;
-	public boolean mAddBracket;
+	//public boolean mAddBracket;
 	
 	public boolean mSubEnable;
 	public int mSubFrom;
 	public int mSubTo;
-	public int mSubNum;
-	public boolean mSubBracket;
+	//public int mSubNum;
+	//public boolean mSubBracket;
 	
 	public boolean mMulEnable;
 	public int mMulFrom;
 	public int mMulTo;
 	public int mMulNum;
-	public boolean mMulBracket;
+	//public boolean mMulBracket;
 	
 	public boolean mMixEnable;
 	public int mMixFlag;
+	public int mMixFrom;
+	public int mMixTo;
 	public int mMixNum;
 	public boolean mMixBracket;
 }

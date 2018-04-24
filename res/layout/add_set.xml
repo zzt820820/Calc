@@ -68,11 +68,11 @@
 	        </EditText>
 
 	</LinearLayout>
-	<CheckBox
+	<!-- CheckBox
         android:id="@+id/bracket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/bracket" />
+        android:text="@string/bracket" /-->
     <View android:layout_weight="4" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
 
 

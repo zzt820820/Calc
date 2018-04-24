@@ -17,6 +17,8 @@ public class MixFragment extends Fragment implements ContentCheck {
 	CheckBox mAdd;
 	CheckBox mSub;
 	CheckBox mMul;
+	EditText mFrom;
+	EditText mTo;
 	EditText mNum;
 	CheckBox mBracket;
 	@Override
@@ -28,6 +30,8 @@ public class MixFragment extends Fragment implements ContentCheck {
 		mAdd = (CheckBox)view.findViewById(R.id.mix_add);
 		mSub = (CheckBox)view.findViewById(R.id.mix_sub);
 		mMul = (CheckBox)view.findViewById(R.id.mix_mul);
+		mFrom = (EditText)view.findViewById(R.id.from_num);
+		mTo = (EditText)view.findViewById(R.id.to_num);
 		mNum = (EditText)view.findViewById(R.id.op_nums);
 		mBracket = (CheckBox)view.findViewById(R.id.bracket);
 		return view;
@@ -48,9 +52,23 @@ public class MixFragment extends Fragment implements ContentCheck {
 
 		mSet.mMixBracket = mBracket.isChecked();
 		
+		String from = mFrom.getText().toString();
+		String to = mTo.getText().toString();
 		String num = mNum.getText().toString();
 
 		if(mSet.mMixEnable) {
+			if(from == null || from.isEmpty()) {
+				Utils.Alert(this.getActivity(), R.string.from_empty);
+				return false;
+			}
+			mSet.mMixFrom = Integer.parseInt(from);
+			
+			if(to == null || to.isEmpty()) {
+				Utils.Alert(this.getActivity(), R.string.to_empty);
+				return false;
+			}
+			mSet.mMixTo = Integer.parseInt(to);
+			
 			if(num == null || num.isEmpty()) {
 				Utils.Alert(this.getActivity(), R.string.num_empty);
 				return false;

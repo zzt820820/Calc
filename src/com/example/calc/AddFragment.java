@@ -17,7 +17,7 @@ public class AddFragment extends Fragment implements ContentCheck {
 	EditText mFrom;
 	EditText mTo;
 	EditText mNum;
-	CheckBox mBracket;
+	//CheckBox mBracket;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -27,13 +27,13 @@ public class AddFragment extends Fragment implements ContentCheck {
 		mFrom = (EditText)view.findViewById(R.id.from_num);
 		mTo = (EditText)view.findViewById(R.id.to_num);
 		mNum = (EditText)view.findViewById(R.id.op_nums);
-		mBracket = (CheckBox)view.findViewById(R.id.bracket);
+		//mBracket = (CheckBox)view.findViewById(R.id.bracket);
 		return view;
 	}
 	@Override
 	public boolean check() {
 		mSet.mAddEnable = mEnable.isChecked();
-		mSet.mAddBracket = mBracket.isChecked();
+		//mSet.mAddBracket = mBracket.isChecked();
 		
 		String from = mFrom.getText().toString();
 		String to = mTo.getText().toString();
