@@ -23,7 +23,9 @@ public class TimeFragment extends Fragment implements ContentCheck {
 		mHour = (EditText)view.findViewById(R.id.time_hour);
 		mMin = (EditText)view.findViewById(R.id.time_min);
 		mSec = (EditText)view.findViewById(R.id.time_sec);
-		
+		mHour.setText(""+mSet.mTimeHour);
+		mMin.setText(""+mSet.mTimeMin);
+		mSec.setText(""+mSet.mTimeSec);
 		return view;
 	}
 	@Override

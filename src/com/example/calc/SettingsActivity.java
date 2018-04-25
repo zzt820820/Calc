@@ -15,6 +15,7 @@ public class SettingsActivity extends Activity implements OnClickListener {
 	static final int STEP_MUL = 4;
 	static final int STEP_MIX = 5;
 	int mStep = 0;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -24,6 +25,16 @@ public class SettingsActivity extends Activity implements OnClickListener {
 		getFragmentManager().beginTransaction().replace(R.id.setting_frag, frag, "mode").commit();
 		findViewById(R.id.next).setOnClickListener(this);
 		mStep = 0;
+		DataManager dm = AppContext.getDataManager();
+		if(dm != null) {
+			Settings set = AppContext.getSettings();
+			if(set != null) {
+				Settings saved = dm.get_profile_by_name("");
+				if(saved != null) {
+					set.load(saved);
+				}
+			}
+		}
 	}
 
 	@Override
@@ -117,6 +128,18 @@ public class SettingsActivity extends Activity implements OnClickListener {
 			if(frag != null && frag instanceof MixFragment) {
 				mix_frag = (MixFragment)frag;
 				if(mix_frag.check()) {
+					Settings set = AppContext.getSettings();
+					if(!set.mAddEnable && !set.mSubEnable && !set.mMulEnable && !set.mMixEnable) {
+						Utils.Alert(this, R.string.no_enabled);
+						break;
+					}
+					
+					if(set != null && set.mName != null && !set.mName.isEmpty()) {
+						DataManager dm = AppContext.getDataManager();
+						if(dm != null) {
+							dm.insert_profile(set);
+						}
+					}
 					Intent intent = new Intent(this, PaperActivity.class);
 					String sInfoFormat = getResources().getString(R.string.start_exam);
 					String ok = this.getString(R.string.ok);

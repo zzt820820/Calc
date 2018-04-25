@@ -17,7 +17,7 @@ public class MulFragment extends Fragment implements ContentCheck {
 	EditText mFrom;
 	EditText mTo;
 	EditText mNum;
-	//CheckBox mBracket;
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -27,13 +27,15 @@ public class MulFragment extends Fragment implements ContentCheck {
 		mFrom = (EditText)view.findViewById(R.id.from_num);
 		mTo = (EditText)view.findViewById(R.id.to_num);
 		mNum = (EditText)view.findViewById(R.id.op_nums);
-		//mBracket = (CheckBox)view.findViewById(R.id.bracket);
+		mEnable.setChecked(mSet.mMulEnable);
+		mFrom.setText("" + mSet.mMulFrom);
+		mTo.setText("" + mSet.mMulTo);
+		mNum.setText("" +mSet.mMulNum);
 		return view;
 	}
 	@Override
 	public boolean check() {
 		mSet.mMulEnable = mEnable.isChecked();
-		//mSet.mMulBracket = mBracket.isChecked();
 		
 		String from = mFrom.getText().toString();
 		String to = mTo.getText().toString();

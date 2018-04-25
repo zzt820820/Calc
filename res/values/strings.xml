@@ -8,6 +8,8 @@
     <string name="new_profile">New</string>
     <string name="query_paper">Query</string>
     <string name="next">Next</string>
+    <string name="end">End</string>
+    <string name="profile_name">Name:</string>
     <string name="mode_total_time">Total time</string>
     <string name="mode_per_time">Per time</string>
     <string name="time_set">Time Set</string>
@@ -57,5 +59,7 @@
     <string name="start_exam">Press %1$s to start.</string>
     <string name="remain_time">Remian time:</string>
     <string name="equal">=</string>
+    <string name="no_enabled">No method enabled.</string>
+    <string name="mark_content">Total %1$d Correct %2$d Wrong %3$d</string>
 
 </resources>

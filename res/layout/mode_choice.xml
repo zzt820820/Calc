@@ -4,34 +4,52 @@
     android:layout_height="match_parent"
     android:gravity="center|top"
     android:orientation="vertical" >
-<LinearLayout 
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:gravity="left"
-    android:paddingLeft="20dp"
-    android:orientation="vertical" >
-    <RadioGroup 
-        android:id="@+id/mode_select"
-        android:layout_width="wrap_content" 
-        android:layout_height="wrap_content">
-	    <RadioButton
-	        android:id="@+id/mode_total_time"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="@string/mode_total_time" />
-	
-	    <RadioButton
-	        android:id="@+id/mode_per_time"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="@string/mode_per_time" />
-	</RadioGroup>
-    </LinearLayout>
-    <View android:layout_weight="4" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-    <Button
-        android:id="@+id/next"
+
+
+
+	<LinearLayout 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:gravity="left"
+	    android:paddingLeft="20dp"
+	    android:orientation="horizontal"
+	    >
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/next" />
+        android:text="@string/profile_name" />
+	    <EditText
+	        android:id="@+id/profile_name"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:ems="10" >
+	
+	        <requestFocus />
+	    </EditText>
+    </LinearLayout>
+	<LinearLayout 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:gravity="left"
+	    android:paddingLeft="20dp"
+	    android:orientation="vertical" >
+	    <RadioGroup 
+	        android:id="@+id/mode_select"
+	        android:layout_width="wrap_content" 
+	        android:layout_height="wrap_content">
+		    <RadioButton
+		        android:id="@+id/mode_total_time"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/mode_total_time" />
+		
+		    <RadioButton
+		        android:id="@+id/mode_per_time"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/mode_per_time" />
+		</RadioGroup>
+    </LinearLayout>
+    <View android:layout_weight="4" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
     <View android:layout_weight="1"  android:layout_width="wrap_content" android:layout_height="wrap_content"/>
 </LinearLayout>

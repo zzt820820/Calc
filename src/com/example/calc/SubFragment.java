@@ -16,8 +16,7 @@ public class SubFragment extends Fragment implements ContentCheck {
 	CheckBox mEnable;
 	EditText mFrom;
 	EditText mTo;
-	//EditText mNum;
-	//CheckBox mBracket;
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -26,8 +25,10 @@ public class SubFragment extends Fragment implements ContentCheck {
 		mEnable = (CheckBox)view.findViewById(R.id.enable);
 		mFrom = (EditText)view.findViewById(R.id.from_num);
 		mTo = (EditText)view.findViewById(R.id.to_num);
-		//mNum = (EditText)view.findViewById(R.id.op_nums);
-		//mBracket = (CheckBox)view.findViewById(R.id.bracket);
+		mEnable.setChecked(mSet.mSubEnable);
+		mFrom.setText("" + mSet.mSubFrom);
+		mTo.setText("" + mSet.mSubTo);
+
 		return view;
 	}
 	@Override

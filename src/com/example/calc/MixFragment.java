@@ -34,6 +34,22 @@ public class MixFragment extends Fragment implements ContentCheck {
 		mTo = (EditText)view.findViewById(R.id.to_num);
 		mNum = (EditText)view.findViewById(R.id.op_nums);
 		mBracket = (CheckBox)view.findViewById(R.id.bracket);
+		
+		mEnable.setChecked(mSet.mMixEnable);
+		mFrom.setText("" + mSet.mMixFrom);
+		mTo.setText("" + mSet.mMixTo);
+		mNum.setText("" +mSet.mMixNum);
+		mBracket.setChecked(mSet.mMixBracket);
+		if((mSet.mMixFlag & Settings.MIX_ADD) != 0) {
+			mAdd.setChecked(true);
+		}
+		if((mSet.mMixFlag & Settings.MIX_SUB) != 0) {
+			mSub.setChecked(true);
+		}
+		if((mSet.mMixFlag & Settings.MIX_MUL) != 0) {
+			mMul.setChecked(true);
+		}
+		
 		return view;
 	}
 	@Override

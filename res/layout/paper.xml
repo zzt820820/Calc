@@ -20,7 +20,6 @@
 	        android:id="@+id/remain_time"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="00:00:00"
 	         />
 
 	</LinearLayout>
@@ -39,7 +38,6 @@
         android:layout_gravity="right"
         android:gravity="right"
         android:textSize="@dimen/ques_size"
-        android:text="aaa"
          />
 	    <TextView 
 	        android:layout_width="0dp" 
@@ -55,7 +53,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:textSize="@dimen/ques_size"
-        android:text="bb"
          />
 
 	</LinearLayout>
@@ -184,12 +181,21 @@
          />
 
 	</LinearLayout>
-
-	<Button
-	    android:id="@+id/next"
+	<LinearLayout
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:layout_gravity="right"
+	    android:orientation="horizontal"
+	    >
+		<Button
+		    android:id="@+id/end"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="@string/end" />
+		<View android:layout_width="0dp" android:layout_height="dp" android:layout_weight="1"/>
+		<Button
+		    android:id="@+id/next"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
 	    android:text="@string/next" />
-
+	</LinearLayout>
 </LinearLayout>
