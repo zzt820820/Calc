@@ -4,12 +4,17 @@ import android.app.Application;
 
 public class AppContext extends Application {
 
+	@Override
+	public void onTerminate() {
+		mDataManager.close();
+		super.onTerminate();
+	}
+
 	static Settings mSettings;
 	static DataManager mDataManager;
 
 	@Override
 	public void onCreate() {
-		// TODO Auto-generated method stub
 		super.onCreate();
 		mSettings = new Settings();
 		mDataManager = new DataManager(this);

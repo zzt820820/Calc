@@ -28,6 +28,8 @@ public class MainActivity extends Activity implements OnClickListener {
 		Intent intent;
 		switch(view.getId()) {
 		case R.id.choice_profile:
+			intent = new Intent(this, ProfileActivity.class);
+			startActivity(intent);
 			break;
 		case R.id.new_profile:
 			intent = new Intent(this, SettingsActivity.class);

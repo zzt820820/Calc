@@ -61,5 +61,8 @@
     <string name="equal">=</string>
     <string name="no_enabled">No method enabled.</string>
     <string name="mark_content">Total %1$d Correct %2$d Wrong %3$d</string>
+    <string name="edit">Edit</string>
+    <string name="start">Start</string>
+    <string name="delete">Del</string>
 
 </resources>

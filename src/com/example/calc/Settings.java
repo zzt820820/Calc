@@ -9,6 +9,7 @@ public class Settings {
 	static public final int MIX_MUL = 0x04;
 	
 	public String mName;
+	public int mId;
 	
 	public int mMode;
 	public int mTimeHour;
@@ -46,6 +47,7 @@ public class Settings {
 	
 	public Settings() {
 		mName = "";
+		mId = 0;
 		mMode = 0;
 		mTimeHour = 0;
 		mTimeMin = 0;
@@ -74,6 +76,7 @@ public class Settings {
 	}
 	public void load(Settings in) {
 		mName = in.mName;
+		mId = in.mId;
 		mMode = in.mMode;
 		mTimeHour = in.mTimeHour;
 		mTimeMin = in.mTimeMin;
