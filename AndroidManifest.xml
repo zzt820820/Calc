@@ -35,6 +35,14 @@
             android:name=".ProfileActivity"
 			>
         </activity>
+        <activity
+            android:name=".PapersActivity"
+			>
+        </activity>
+        <activity
+            android:name=".PaperReviewActivity"
+			>
+        </activity>
     </application>
 
 </manifest>

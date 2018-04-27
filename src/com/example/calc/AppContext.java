@@ -18,6 +18,7 @@ public class AppContext extends Application {
 		super.onCreate();
 		mSettings = new Settings();
 		mDataManager = new DataManager(this);
+		mDataManager.clear_papers();
 		
 	}
 

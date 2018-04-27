@@ -15,26 +15,41 @@ public class SettingsActivity extends Activity implements OnClickListener {
 	static final int STEP_MUL = 4;
 	static final int STEP_MIX = 5;
 	int mStep = 0;
+	String mMode = "new";
+	
+	public String getMode() {
+		return mMode;
+	}
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.setting);
+		if(mMode.equals("new")) {
+			DataManager dm = AppContext.getDataManager();
+			if(dm != null) {
+				Settings set = AppContext.getSettings();
+				if(set != null) {
+					Settings saved = dm.get_profile_by_name("");
+					if(saved != null) {
+						set.load(saved);
+					}
+				}
+			}
+		}
 		ModeFragment frag = new ModeFragment();
 		getFragmentManager().beginTransaction().replace(R.id.setting_frag, frag, "mode").commit();
 		findViewById(R.id.next).setOnClickListener(this);
 		mStep = 0;
-		DataManager dm = AppContext.getDataManager();
-		if(dm != null) {
-			Settings set = AppContext.getSettings();
-			if(set != null) {
-				Settings saved = dm.get_profile_by_name("");
-				if(saved != null) {
-					set.load(saved);
-				}
+		Intent intent = getIntent();
+		if(intent != null) {
+			String mode = intent.getStringExtra("mode");
+			if(mode != null) {
+				mMode = mode; 
 			}
 		}
+
 	}
 
 	@Override
@@ -137,7 +152,11 @@ public class SettingsActivity extends Activity implements OnClickListener {
 					if(set != null && set.mName != null && !set.mName.isEmpty()) {
 						DataManager dm = AppContext.getDataManager();
 						if(dm != null) {
-							dm.insert_profile(set);
+							if(mMode.equals("new")) {
+								dm.insert_profile(set);
+							} else if(mMode.equals("edit")){
+								dm.update_profile_by_id(set);
+							}
 						}
 					}
 					Intent intent = new Intent(this, PaperActivity.class);

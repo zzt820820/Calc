@@ -18,9 +18,6 @@ public class MainActivity extends Activity implements OnClickListener {
 		findViewById(R.id.choice_profile).setOnClickListener(this);
 		findViewById(R.id.new_profile).setOnClickListener(this);
 		findViewById(R.id.query_paper).setOnClickListener(this);
-		//SettingFragment frag = new SettingFragment();
-		//getFragmentManager().beginTransaction().replace(R.id.setting_frag, frag, "menu").commit();
-		//this.findViewById(R.id.next).setOnClickListener(this);
 	}
 
 	@Override
@@ -33,9 +30,12 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.new_profile:
 			intent = new Intent(this, SettingsActivity.class);
+			intent.putExtra("mode", "new");
 			startActivity(intent);
 			break;
 		case R.id.query_paper:
+			intent = new Intent(this, PapersActivity.class);
+			startActivity(intent);
 			break;
 		}
 	}
