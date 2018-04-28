@@ -29,7 +29,7 @@
 	            android:layout_height="wrap_content"
 	            android:layout_weight="1"
 	            android:selectAllOnFocus="true"
-	            android:inputType="numberDecimal" >
+	            android:inputType="numberSigned" >
 
 	        </EditText>
 	        <TextView
@@ -43,7 +43,7 @@
 	            android:layout_height="wrap_content"
 	            android:layout_weight="1"
 	            android:selectAllOnFocus="true"
-	            android:inputType="numberDecimal" >
+	            android:inputType="numberSigned" >
 
 	        </EditText>
 
@@ -63,7 +63,7 @@
 	            android:layout_height="wrap_content"
 	            android:layout_weight="1"
 	            android:selectAllOnFocus="true"
-	            android:inputType="numberDecimal" >
+	            android:inputType="numberSigned" >
 
 	        </EditText>
 
