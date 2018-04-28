@@ -28,8 +28,15 @@ public class AddFragment extends Fragment implements ContentCheck {
 		mTo = (EditText)view.findViewById(R.id.to_num);
 		mNum = (EditText)view.findViewById(R.id.op_nums);
 		mEnable.setChecked(mSet.mAddEnable);
+		if((mSet.mAddFrom == 0) && (mSet.mAddTo == 0)) {
+			mSet.mAddFrom = this.getResources().getInteger(R.integer.def_add_from);
+			mSet.mAddTo = this.getResources().getInteger(R.integer.def_add_to);
+		}
 		mFrom.setText("" + mSet.mAddFrom);
 		mTo.setText("" + mSet.mAddTo);
+		if(mSet.mAddNum == 0) {
+			mSet.mAddNum = this.getResources().getInteger(R.integer.def_add_num);
+		}
 		mNum.setText("" +mSet.mAddNum);
 		return view;
 	}

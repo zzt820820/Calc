@@ -23,6 +23,17 @@ public class TimeFragment extends Fragment implements ContentCheck {
 		mHour = (EditText)view.findViewById(R.id.time_hour);
 		mMin = (EditText)view.findViewById(R.id.time_min);
 		mSec = (EditText)view.findViewById(R.id.time_sec);
+		if((mSet.mTimeHour == 0) && (mSet.mTimeMin == 0) && (mSet.mTimeSec == 0)) {
+			int time = 0;
+			if(mSet.mMode == Settings.MODE_TOTAL_TIME) {
+				time = getResources().getInteger(R.integer.def_total_time);
+			} else if(mSet.mMode == Settings.MODE_PER_TIME) {
+				time = getResources().getInteger(R.integer.def_per_time);
+			}
+			mSet.mTimeHour = time /3600;
+			mSet.mTimeMin = (time % 3600) / 60;
+			mSet.mTimeSec = time % 60;
+		}
 		mHour.setText(""+mSet.mTimeHour);
 		mMin.setText(""+mSet.mTimeMin);
 		mSec.setText(""+mSet.mTimeSec);

@@ -50,9 +50,9 @@
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:layout_weight="1"
+	            android:selectAllOnFocus="true"
 	            android:inputType="numberDecimal" >
 
-	            <requestFocus />
 	        </EditText>
 	        <TextView
 	        android:layout_width="wrap_content"
@@ -64,9 +64,9 @@
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:layout_weight="1"
+	            android:selectAllOnFocus="true"
 	            android:inputType="numberDecimal" >
 
-	            <requestFocus />
 	        </EditText>
 
 	</LinearLayout>
@@ -84,9 +84,9 @@
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:layout_weight="1"
+	            android:selectAllOnFocus="true"
 	            android:inputType="numberDecimal" >
 
-	            <requestFocus />
 	        </EditText>
 
 	</LinearLayout>
@@ -96,12 +96,5 @@
         android:layout_height="wrap_content"
         android:text="@string/bracket" />
     <View android:layout_weight="4" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-
-
-    <Button
-        android:id="@+id/next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/next" />
     <View android:layout_weight="1" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
 </LinearLayout>

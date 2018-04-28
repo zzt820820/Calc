@@ -248,7 +248,6 @@ public class PaperActivity extends Activity implements OnClickListener {
 			break;
 		}
 
-
 		if(!SIM) {
 			mAnswer.setText(mAnswerStr);
 		}
@@ -265,6 +264,9 @@ public class PaperActivity extends Activity implements OnClickListener {
 			}
 		}
 		mAnswerStr = "";
+		if(!SIM) {
+			mAnswer.setText(mAnswerStr);
+		}
 		String str = mQuestionGen.getQuestion();
 		mQuestion.setText(str);
 		mQuestionStr = str;
@@ -335,6 +337,8 @@ public class PaperActivity extends Activity implements OnClickListener {
 			String sFinalInfo=String.format(sInfoFormat, mTotal, mCorrect, mTotal-mCorrect); 
 			alertDialog.setMessage(sFinalInfo);
 		    alertDialog.show();
+		} else {
+			finish();
 		}
 	}
 }

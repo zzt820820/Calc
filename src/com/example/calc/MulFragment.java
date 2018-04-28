@@ -28,8 +28,15 @@ public class MulFragment extends Fragment implements ContentCheck {
 		mTo = (EditText)view.findViewById(R.id.to_num);
 		mNum = (EditText)view.findViewById(R.id.op_nums);
 		mEnable.setChecked(mSet.mMulEnable);
+		if((mSet.mMulFrom == 0) && (mSet.mMulTo == 0)) {
+			mSet.mMulFrom = this.getResources().getInteger(R.integer.def_mul_from);
+			mSet.mMulTo = this.getResources().getInteger(R.integer.def_mul_to);
+		}
 		mFrom.setText("" + mSet.mMulFrom);
 		mTo.setText("" + mSet.mMulTo);
+		if(mSet.mMulNum == 0) {
+			mSet.mMulNum = this.getResources().getInteger(R.integer.def_mul_num);
+		}
 		mNum.setText("" +mSet.mMulNum);
 		return view;
 	}

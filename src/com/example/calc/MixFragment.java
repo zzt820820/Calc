@@ -36,10 +36,28 @@ public class MixFragment extends Fragment implements ContentCheck {
 		mBracket = (CheckBox)view.findViewById(R.id.bracket);
 		
 		mEnable.setChecked(mSet.mMixEnable);
+		if((mSet.mMixFrom == 0) && (mSet.mMixTo == 0)) {
+			mSet.mMixFrom = this.getResources().getInteger(R.integer.def_mix_from);
+			mSet.mMixTo = this.getResources().getInteger(R.integer.def_mix_to);
+		}
 		mFrom.setText("" + mSet.mMixFrom);
 		mTo.setText("" + mSet.mMixTo);
+		if(mSet.mMixNum == 0) {
+			mSet.mMixNum = this.getResources().getInteger(R.integer.def_mix_num);
+		}
 		mNum.setText("" +mSet.mMixNum);
 		mBracket.setChecked(mSet.mMixBracket);
+		if(mSet.mMixFlag == 0) {
+			if(getResources().getBoolean(R.bool.def_mix_add)) {
+				mSet.mMixFlag |= Settings.MIX_ADD;
+			}
+			if(getResources().getBoolean(R.bool.def_mix_sub)) {
+				mSet.mMixFlag |= Settings.MIX_SUB;
+			}
+			if(getResources().getBoolean(R.bool.def_mix_mul)) {
+				mSet.mMixFlag |= Settings.MIX_MUL;
+			}
+		}
 		if((mSet.mMixFlag & Settings.MIX_ADD) != 0) {
 			mAdd.setChecked(true);
 		}

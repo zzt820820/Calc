@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="def_mode">total</string>
+    <integer name="def_total_time">300</integer>
+    <integer name="def_per_time">10</integer>
+    <bool name="def_add_enable">true</bool>
+    <integer name="def_add_from">0</integer>
+    <integer name="def_add_to">20</integer>
+    <integer name="def_add_num">2</integer>
+    <bool name="def_sub_enable">true</bool>
+    <integer name="def_sub_from">0</integer>
+    <integer name="def_sub_to">20</integer>
+    <bool name="def_mul_enable">false</bool>
+    <integer name="def_mul_from">0</integer>
+    <integer name="def_mul_to">20</integer>
+    <integer name="def_mul_num">2</integer>
+    <bool name="def_mix_enable">false</bool>
+    <bool name="def_mix_add">true</bool>
+    <bool name="def_mix_sub">true</bool>
+    <bool name="def_mix_mul">true</bool>
+    <integer name="def_mix_from">0</integer>
+    <integer name="def_mix_to">20</integer>
+    <integer name="def_mix_num">3</integer>
+    <bool name="def_mix_bracket">false</bool>
+</resources>

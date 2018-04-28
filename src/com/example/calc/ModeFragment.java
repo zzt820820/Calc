@@ -34,10 +34,20 @@ public class ModeFragment extends Fragment implements OnCheckedChangeListener, C
 		if(mActivity.getMode().equals("edit")) {
 			mProfileName.setText(mSet.mName);
 		}
+		if(mSet.mMode == 0) {
+			String str = getResources().getString(R.string.def_mode);
+			if("total".equals(str)) {
+				mSet.mMode = Settings.MODE_TOTAL_TIME;
+			} else if("per".equals(str)) {
+				mSet.mMode = Settings.MODE_PER_TIME;
+			}
+		}
 		if(mSet.mMode == Settings.MODE_TOTAL_TIME) {
 			mTotalTime.setChecked(true);
 		} else if(mSet.mMode == Settings.MODE_PER_TIME) {
 			mPerTime.setChecked(true);
+		} else {
+			
 		}
 		return view;
 	}

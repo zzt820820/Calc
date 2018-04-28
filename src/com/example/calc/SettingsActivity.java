@@ -26,6 +26,13 @@ public class SettingsActivity extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.setting);
+		Intent intent = getIntent();
+		if(intent != null) {
+			String mode = intent.getStringExtra("mode");
+			if(mode != null) {
+				mMode = mode; 
+			}
+		}
 		if(mMode.equals("new")) {
 			DataManager dm = AppContext.getDataManager();
 			if(dm != null) {
@@ -42,13 +49,7 @@ public class SettingsActivity extends Activity implements OnClickListener {
 		getFragmentManager().beginTransaction().replace(R.id.setting_frag, frag, "mode").commit();
 		findViewById(R.id.next).setOnClickListener(this);
 		mStep = 0;
-		Intent intent = getIntent();
-		if(intent != null) {
-			String mode = intent.getStringExtra("mode");
-			if(mode != null) {
-				mMode = mode; 
-			}
-		}
+
 
 	}
 
