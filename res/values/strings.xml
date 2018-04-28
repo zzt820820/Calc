@@ -73,5 +73,7 @@
     <string name="used_time">Time:</string>
     <string name="div">/</string>
     <string name="correct_answer">Correct:</string>
+    <string name="mode_txt">Mode:</string>
+    <string name="total_num_empty">NUm is empty.</string>
 
 </resources>

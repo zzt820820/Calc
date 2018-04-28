@@ -18,6 +18,7 @@ public class ModeFragment extends Fragment implements OnCheckedChangeListener, C
 	RadioButton mTotalTime;
 	RadioButton mPerTime;
 	EditText mProfileName;
+	EditText mTotalNum;
 	
 	SettingsActivity mActivity;
 	@Override
@@ -31,9 +32,11 @@ public class ModeFragment extends Fragment implements OnCheckedChangeListener, C
 		mModeSelect = (RadioGroup)view.findViewById(R.id.mode_select);
 		mModeSelect.setOnCheckedChangeListener(this);
 		mProfileName = (EditText)view.findViewById(R.id.profile_name);
+		mTotalNum = (EditText)view.findViewById(R.id.total_num);
 		if(mActivity.getMode().equals("edit")) {
 			mProfileName.setText(mSet.mName);
 		}
+		mTotalNum.setText(mSet.mTotalNum+"");
 		if(mSet.mMode == 0) {
 			String str = getResources().getString(R.string.def_mode);
 			if("total".equals(str)) {
@@ -74,6 +77,12 @@ public class ModeFragment extends Fragment implements OnCheckedChangeListener, C
 			return false;
 		}
 		mSet.mName = mProfileName.getText().toString();
+		String str = mTotalNum.getText().toString();
+		if(str == null || str.isEmpty()) {
+			Utils.Alert(this.getActivity(), R.string.total_num_empty);
+			return false;
+		}
+		mSet.mTotalNum = Integer.parseInt(str);
 		return true;
 	}
 

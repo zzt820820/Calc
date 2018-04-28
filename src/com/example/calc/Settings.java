@@ -12,6 +12,7 @@ public class Settings {
 	public int mId;
 	
 	public int mMode;
+	public int mTotalNum;
 	public int mTimeHour;
 	public int mTimeMin;
 	public int mTimeSec;
@@ -49,6 +50,7 @@ public class Settings {
 		mName = "";
 		mId = 0;
 		mMode = 0;
+		mTotalNum = 0;
 		mTimeHour = 0;
 		mTimeMin = 0;
 		mTimeSec = 0;
@@ -78,6 +80,7 @@ public class Settings {
 		mName = in.mName;
 		mId = in.mId;
 		mMode = in.mMode;
+		mTotalNum = in.mTotalNum;
 		mTimeHour = in.mTimeHour;
 		mTimeMin = in.mTimeMin;
 		mTimeSec = in.mTimeSec;

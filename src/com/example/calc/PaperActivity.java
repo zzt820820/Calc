@@ -258,6 +258,10 @@ public class PaperActivity extends Activity implements OnClickListener {
 			mPaperId = mDm.create_paper();
 			mStarted = true;
 		}
+		if(mSet.mTotalNum > 0 && mTotal >= mSet.mTotalNum) {
+			end(true);
+			return;
+		}
 		if(!first) {
 			if(checkAnswer()) {
 				mCorrect++;
@@ -267,6 +271,7 @@ public class PaperActivity extends Activity implements OnClickListener {
 		if(!SIM) {
 			mAnswer.setText(mAnswerStr);
 		}
+		
 		String str = mQuestionGen.getQuestion();
 		mQuestion.setText(str);
 		mQuestionStr = str;

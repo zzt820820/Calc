@@ -19,6 +19,7 @@ public class DataManager {
 	private static final String PROFILE_ID = "_id";
 	private static final String PROFILE_NAME = "name";
 	private static final String PROFILE_MODE = "mode";
+	private static final String PROFILE_TOTAL_NUM = "total_num";
 	private static final String PROFILE_TIME = "time";
 	private static final String PROFILE_ADD_ENABLE = "add_enable";
 	private static final String PROFILE_ADD_FROM = "add_from";
@@ -66,6 +67,7 @@ public class DataManager {
 					"_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
 					"name TEXT UNIQUE ON CONFLICT REPLACE, " + 
 					"mode INTEGER, " +
+					"total_num INTEGER, " +
 					"time INTEGER, " +
 					"add_enable INTEGER, " +
 					"add_from INTEGER, " +
@@ -127,6 +129,7 @@ public class DataManager {
 		ContentValues values = new ContentValues();
 		values.put(PROFILE_NAME,settings.mName);
 		values.put(PROFILE_MODE,settings.mMode);
+		values.put(PROFILE_TOTAL_NUM,settings.mTotalNum);
 		values.put(PROFILE_TIME,settings.mTimeHour*3600+settings.mTimeMin*60+settings.mTimeSec);
 		values.put(PROFILE_ADD_ENABLE,settings.mAddEnable?1:0);
 		values.put(PROFILE_ADD_FROM,settings.mAddFrom);
@@ -159,6 +162,7 @@ public class DataManager {
 		ContentValues values = new ContentValues();
 		values.put(PROFILE_NAME,settings.mName);
 		values.put(PROFILE_MODE,settings.mMode);
+		values.put(PROFILE_TOTAL_NUM,settings.mTotalNum);
 		values.put(PROFILE_TIME,settings.mTimeHour*3600+settings.mTimeMin*60+settings.mTimeSec);
 		values.put(PROFILE_ADD_ENABLE,settings.mAddEnable?1:0);
 		values.put(PROFILE_ADD_FROM,settings.mAddFrom);
@@ -192,6 +196,7 @@ public class DataManager {
 		ContentValues values = new ContentValues();
 		values.put(PROFILE_NAME,settings.mName);
 		values.put(PROFILE_MODE,settings.mMode);
+		values.put(PROFILE_TOTAL_NUM,settings.mTotalNum);
 		values.put(PROFILE_TIME,settings.mTimeHour*3600+settings.mTimeMin*60+settings.mTimeSec);
 		values.put(PROFILE_ADD_ENABLE,settings.mAddEnable?1:0);
 		values.put(PROFILE_ADD_FROM,settings.mAddFrom);
@@ -229,6 +234,7 @@ public class DataManager {
 		    				PROFILE_ID,
 		    				PROFILE_NAME,
 		    				PROFILE_MODE,
+		    				PROFILE_TOTAL_NUM,
 		    				PROFILE_TIME,
 		    				PROFILE_ADD_ENABLE,
 		    				PROFILE_ADD_FROM,
@@ -260,6 +266,7 @@ public class DataManager {
 		    	set.mId = cursor.getInt(cursor.getColumnIndex(PROFILE_ID));
 		    	set.mName = cursor.getString(cursor.getColumnIndex(PROFILE_NAME));
 		    	set.mMode = cursor.getInt(cursor.getColumnIndex(PROFILE_MODE));
+		    	set.mTotalNum = cursor.getInt(cursor.getColumnIndex(PROFILE_TOTAL_NUM));
 		    	int time = cursor.getInt(cursor.getColumnIndex(PROFILE_TIME));
 		    	set.mTimeHour = time/3600;
 		    	set.mTimeMin = (time % 3600) / 60;
@@ -295,6 +302,7 @@ public class DataManager {
 		    				PROFILE_ID,
 		    				PROFILE_NAME,
 		    				PROFILE_MODE,
+		    				PROFILE_TOTAL_NUM,
 		    				PROFILE_TIME,
 		    				PROFILE_ADD_ENABLE,
 		    				PROFILE_ADD_FROM,
@@ -326,6 +334,7 @@ public class DataManager {
 		    	set.mId = cursor.getInt(cursor.getColumnIndex(PROFILE_ID));
 		    	set.mName = cursor.getString(cursor.getColumnIndex(PROFILE_NAME));
 		    	set.mMode = cursor.getInt(cursor.getColumnIndex(PROFILE_MODE));
+		    	set.mTotalNum = cursor.getInt(cursor.getColumnIndex(PROFILE_TOTAL_NUM));
 		    	int time = cursor.getInt(cursor.getColumnIndex(PROFILE_TIME));
 		    	set.mTimeHour = time/3600;
 		    	set.mTimeMin = (time % 3600) / 60;
@@ -361,6 +370,7 @@ public class DataManager {
 	    				PROFILE_ID,
 	    				PROFILE_NAME,
 	    				PROFILE_MODE,
+	    				PROFILE_TOTAL_NUM,
 	    				PROFILE_TIME,
 	    				PROFILE_ADD_ENABLE,
 	    				PROFILE_ADD_FROM,
@@ -392,6 +402,7 @@ public class DataManager {
 	    	set.mId = cursor.getInt(cursor.getColumnIndex(PROFILE_ID));
 	    	set.mName = cursor.getString(cursor.getColumnIndex(PROFILE_NAME));
 	    	set.mMode = cursor.getInt(cursor.getColumnIndex(PROFILE_MODE));
+	    	set.mTotalNum = cursor.getInt(cursor.getColumnIndex(PROFILE_TOTAL_NUM));
 	    	int time = cursor.getInt(cursor.getColumnIndex(PROFILE_TIME));
 	    	set.mTimeHour = time/3600;
 	    	set.mTimeMin = (time % 3600) / 60;
