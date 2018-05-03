@@ -75,5 +75,13 @@
     <string name="correct_answer">正确答案:</string>
     <string name="mode_txt">模式:</string>
     <string name="total_num_empty">总题数不能为空.</string>
+    <string name="carry">进位</string>
+    <string name="two_add_single">两位加一位</string>
+    <string name="two_add_tens">两位加整十</string>
+    <string name="tens_add">整十加法</string>
+    <string name="borrow">借位</string>
+    <string name="two_sub_single">两位减一位</string>
+    <string name="two_sub_tens">两位减整十</string>
+    <string name="tens_sub">整十减法</string>
 
 </resources>

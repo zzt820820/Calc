@@ -16,6 +16,10 @@ public class SubFragment extends Fragment implements ContentCheck {
 	CheckBox mEnable;
 	EditText mFrom;
 	EditText mTo;
+	CheckBox mBorrow;
+	CheckBox mTwoSubSingle;
+	CheckBox mTwoSubTens;
+	CheckBox mTensSub;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -26,18 +30,46 @@ public class SubFragment extends Fragment implements ContentCheck {
 		mFrom = (EditText)view.findViewById(R.id.from_num);
 		mTo = (EditText)view.findViewById(R.id.to_num);
 		mEnable.setChecked(mSet.mSubEnable);
+		mBorrow = (CheckBox)view.findViewById(R.id.borrow);
+		mTwoSubSingle = (CheckBox)view.findViewById(R.id.two_sub_single);
+		mTwoSubTens = (CheckBox)view.findViewById(R.id.two_sub_tens);
+		mTensSub = (CheckBox)view.findViewById(R.id.tens_sub);
 		if((mSet.mSubFrom == 0) && (mSet.mSubTo == 0)) {
 			mSet.mSubFrom = this.getResources().getInteger(R.integer.def_sub_from);
 			mSet.mSubTo = this.getResources().getInteger(R.integer.def_sub_to);
 		}
 		mFrom.setText("" + mSet.mSubFrom);
 		mTo.setText("" + mSet.mSubTo);
-
+		if((mSet.mSubFlag & Settings.SUB_FLAG_BORROW) != 0) {
+			mBorrow.setChecked(true);
+		}
+		if((mSet.mSubFlag & Settings.SUB_FLAG_TWO_SINGLE) != 0) {
+			mTwoSubSingle.setChecked(true);
+		}
+		if((mSet.mSubFlag & Settings.SUB_FLAG_TWO_TENS) != 0) {
+			mTwoSubTens.setChecked(true);
+		}
+		if((mSet.mSubFlag & Settings.SUB_FLAG_BOTH_TENS) != 0) {
+			mTensSub.setChecked(true);
+		}
 		return view;
 	}
 	@Override
 	public boolean check() {
 		mSet.mSubEnable = mEnable.isChecked();
+		mSet.mSubFlag = 0;
+		if(mBorrow.isChecked()) {
+			mSet.mSubFlag |= Settings.SUB_FLAG_BORROW;
+		}
+		if(mTwoSubSingle.isChecked()) {
+			mSet.mSubFlag |= Settings.SUB_FLAG_TWO_SINGLE;
+		}
+		if(mTwoSubTens.isChecked()) {
+			mSet.mSubFlag |= Settings.SUB_FLAG_TWO_TENS;
+		}
+		if(mTensSub.isChecked()) {
+			mSet.mSubFlag |= Settings.SUB_FLAG_BOTH_TENS;
+		}
 		
 		String from = mFrom.getText().toString();
 		String to = mTo.getText().toString();

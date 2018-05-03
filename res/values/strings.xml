@@ -74,6 +74,14 @@
     <string name="div">/</string>
     <string name="correct_answer">Correct:</string>
     <string name="mode_txt">Mode:</string>
-    <string name="total_num_empty">NUm is empty.</string>
+    <string name="total_num_empty">Num is empty.</string>
+    <string name="carry">Carry</string>
+    <string name="two_add_single">Two add single</string>
+    <string name="two_add_tens">Two add tens</string>
+    <string name="tens_add">Tens add</string>
+    <string name="borrow">Borrow</string>
+    <string name="two_sub_single">Two sub single</string>
+    <string name="two_sub_tens">Two sub tens</string>
+    <string name="tens_sub">Tens sub</string>
 
 </resources>

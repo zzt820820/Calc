@@ -68,6 +68,26 @@
 	        </EditText>
 
 	</LinearLayout>
-    <View android:layout_weight="4" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+	<CheckBox
+        android:id="@+id/carry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/carry" />
+	<CheckBox
+        android:id="@+id/two_add_single"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/two_add_single" />
+	<CheckBox
+        android:id="@+id/two_add_tens"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/two_add_tens" />
+	<CheckBox
+        android:id="@+id/tens_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tens_add" />
+
     <View android:layout_weight="1" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
 </LinearLayout>

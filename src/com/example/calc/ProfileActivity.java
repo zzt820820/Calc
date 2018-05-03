@@ -74,7 +74,8 @@ public class ProfileActivity extends Activity implements OnItemSelectedListener 
 	public void onItemSelected(AdapterView<?> adapterView, View view, int i,
 			long l) {
 		HashMap<String, Object> item = (HashMap<String, Object>)adapterView.getItemAtPosition(i);
-		int id = (int)item.get("id");
+		Integer ido = (Integer)item.get("id");
+		int id = ido;
 		id--;
 		if(mSettings != null && id >= 0 && id < mSettings.size()) {
 			Settings set = mSettings.get(id);
@@ -118,9 +119,11 @@ public class ProfileActivity extends Activity implements OnItemSelectedListener 
 		@Override
 		public void onClick(View view) {
 			Intent intent;
-			int position = (int)view.getTag();
+			Integer ino = (Integer)view.getTag();
+			int position = ino;
 			HashMap<String, Object> item = (HashMap<String, Object>)this.getItem(position);
-			int id = (int)item.get("id");
+			ino = (Integer)item.get("id");
+			int id = ino;
 			id--;
 			if(mSettings != null && id >= 0 && id < mSettings.size()) {
 				Settings set = mSettings.get(id);

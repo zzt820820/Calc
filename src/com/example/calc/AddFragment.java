@@ -17,6 +17,10 @@ public class AddFragment extends Fragment implements ContentCheck {
 	EditText mFrom;
 	EditText mTo;
 	EditText mNum;
+	CheckBox mCarry;
+	CheckBox mTwoAddSingle;
+	CheckBox mTwoAddTens;
+	CheckBox mTensAdd;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -28,6 +32,10 @@ public class AddFragment extends Fragment implements ContentCheck {
 		mTo = (EditText)view.findViewById(R.id.to_num);
 		mNum = (EditText)view.findViewById(R.id.op_nums);
 		mEnable.setChecked(mSet.mAddEnable);
+		mCarry = (CheckBox)view.findViewById(R.id.carry);
+		mTwoAddSingle = (CheckBox)view.findViewById(R.id.two_add_single);
+		mTwoAddTens = (CheckBox)view.findViewById(R.id.two_add_tens);
+		mTensAdd = (CheckBox)view.findViewById(R.id.tens_add);
 		if((mSet.mAddFrom == 0) && (mSet.mAddTo == 0)) {
 			mSet.mAddFrom = this.getResources().getInteger(R.integer.def_add_from);
 			mSet.mAddTo = this.getResources().getInteger(R.integer.def_add_to);
@@ -38,11 +46,36 @@ public class AddFragment extends Fragment implements ContentCheck {
 			mSet.mAddNum = this.getResources().getInteger(R.integer.def_add_num);
 		}
 		mNum.setText("" +mSet.mAddNum);
+		if((mSet.mAddFlag & Settings.ADD_FLAG_CARRY) != 0) {
+			mCarry.setChecked(true);
+		}
+		if((mSet.mAddFlag & Settings.ADD_FLAG_TWO_SINGLE) != 0) {
+			mTwoAddSingle.setChecked(true);
+		}
+		if((mSet.mAddFlag & Settings.ADD_FLAG_TWO_TENS) != 0) {
+			mTwoAddTens.setChecked(true);
+		}
+		if((mSet.mAddFlag & Settings.ADD_FLAG_BOTH_TENS) != 0) {
+			mTensAdd.setChecked(true);
+		}
 		return view;
 	}
 	@Override
 	public boolean check() {
 		mSet.mAddEnable = mEnable.isChecked();
+		mSet.mAddFlag = 0;
+		if(mCarry.isChecked()) {
+			mSet.mAddFlag |= Settings.ADD_FLAG_CARRY;
+		}
+		if(mTwoAddSingle.isChecked()) {
+			mSet.mAddFlag |= Settings.ADD_FLAG_TWO_SINGLE;
+		}
+		if(mTwoAddTens.isChecked()) {
+			mSet.mAddFlag |= Settings.ADD_FLAG_TWO_TENS;
+		}
+		if(mTensAdd.isChecked()) {
+			mSet.mAddFlag |= Settings.ADD_FLAG_BOTH_TENS;
+		}
 		
 		String from = mFrom.getText().toString();
 		String to = mTo.getText().toString();

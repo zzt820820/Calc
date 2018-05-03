@@ -118,7 +118,8 @@ public class PapersActivity extends Activity implements OnItemClickListener, OnC
 
 	@Override
 	public void onClick(View view) {
-		int position = (int)view.getTag();
+		Integer ino = (Integer)view.getTag();
+		int position = ino;
 		Paper paper = mPapers.get(position);
 		switch(view.getId()) {
 		case R.id.review:

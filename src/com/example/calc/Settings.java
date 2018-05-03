@@ -4,6 +4,16 @@ public class Settings {
 	static public final int MODE_TOTAL_TIME = 1;
 	static public final int MODE_PER_TIME = 2;
 	
+	static public final int ADD_FLAG_CARRY = 0x01;
+	static public final int ADD_FLAG_TWO_SINGLE = 0x02;
+	static public final int ADD_FLAG_TWO_TENS = 0x04;
+	static public final int ADD_FLAG_BOTH_TENS = 0x08;
+	
+	static public final int SUB_FLAG_BORROW = 0x01;
+	static public final int SUB_FLAG_TWO_SINGLE = 0x02;
+	static public final int SUB_FLAG_TWO_TENS = 0x04;
+	static public final int SUB_FLAG_BOTH_TENS = 0x08;
+	
 	static public final int MIX_ADD = 0x01;
 	static public final int MIX_SUB = 0x02;
 	static public final int MIX_MUL = 0x04;
@@ -21,13 +31,13 @@ public class Settings {
 	public int mAddFrom;
 	public int mAddTo;
 	public int mAddNum;
-	//public boolean mAddBracket;
+	public int mAddFlag;
 	
 	public boolean mSubEnable;
 	public int mSubFrom;
 	public int mSubTo;
 	//public int mSubNum;
-	//public boolean mSubBracket;
+	public int mSubFlag;
 	
 	public boolean mMulEnable;
 	public int mMulFrom;
@@ -59,10 +69,12 @@ public class Settings {
 		mAddFrom = 0;
 		mAddTo = 0;
 		mAddNum = 0;
+		mAddFlag = 0;
 		
 		mSubEnable = false;
 		mSubFrom = 0;
 		mSubTo = 0;
+		mSubFlag = 0;
 		
 		mMulEnable = false;
 		mMulFrom = 0;
@@ -89,10 +101,12 @@ public class Settings {
 		mAddFrom = in.mAddFrom;
 		mAddTo = in.mAddTo;
 		mAddNum = in.mAddNum;
+		mAddFlag = in.mAddFlag;
 		
 		mSubEnable = in.mSubEnable;
 		mSubFrom = in.mSubFrom;
 		mSubTo = in.mSubTo;
+		mSubFlag = in.mSubFlag;
 		
 		mMulEnable = in.mMulEnable;
 		mMulFrom = in.mMulFrom;

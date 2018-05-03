@@ -25,9 +25,11 @@ public class DataManager {
 	private static final String PROFILE_ADD_FROM = "add_from";
 	private static final String PROFILE_ADD_TO = "add_to";
 	private static final String PROFILE_ADD_NUM = "add_num";
+	private static final String PROFILE_ADD_FLAG = "add_flag";
 	private static final String PROFILE_SUB_ENABLE = "sub_enable";
 	private static final String PROFILE_SUB_FROM = "sub_from";
 	private static final String PROFILE_SUB_TO = "sub_to";
+	private static final String PROFILE_SUB_FLAG = "sub_flag";
 	private static final String PROFILE_MUL_ENABLE = "mul_enable";
 	private static final String PROFILE_MUL_FROM = "mul_from";
 	private static final String PROFILE_MUL_TO = "mul_to";
@@ -73,9 +75,11 @@ public class DataManager {
 					"add_from INTEGER, " +
 					"add_to INTEGER, " +
 					"add_num INTEGER, " +
+					"add_flag INTEGER, " +
 					"sub_enable INTEGER, " +
 					"sub_from INTEGER, " +
 					"sub_to INTEGER, " +
+					"sub_flag INTEGER, " +
 					"mul_enable INTEGER, " +
 					"mul_from INTEGER, " +
 					"mul_to INTEGER, " +
@@ -135,9 +139,11 @@ public class DataManager {
 		values.put(PROFILE_ADD_FROM,settings.mAddFrom);
 		values.put(PROFILE_ADD_TO,settings.mAddTo);
 		values.put(PROFILE_ADD_NUM,settings.mAddNum);
+		values.put(PROFILE_ADD_FLAG,settings.mAddFlag);
 		values.put(PROFILE_SUB_ENABLE,settings.mSubEnable?1:0);
 		values.put(PROFILE_SUB_FROM,settings.mSubFrom);
 		values.put(PROFILE_SUB_TO,settings.mSubTo);
+		values.put(PROFILE_SUB_FLAG,settings.mSubFlag);
 		values.put(PROFILE_MUL_ENABLE,settings.mMulEnable?1:0);
 		values.put(PROFILE_MUL_FROM,settings.mMulFrom);
 		values.put(PROFILE_MUL_TO,settings.mMulTo);
@@ -168,9 +174,11 @@ public class DataManager {
 		values.put(PROFILE_ADD_FROM,settings.mAddFrom);
 		values.put(PROFILE_ADD_TO,settings.mAddTo);
 		values.put(PROFILE_ADD_NUM,settings.mAddNum);
+		values.put(PROFILE_ADD_FLAG,settings.mAddFlag);
 		values.put(PROFILE_SUB_ENABLE,settings.mSubEnable?1:0);
 		values.put(PROFILE_SUB_FROM,settings.mSubFrom);
 		values.put(PROFILE_SUB_TO,settings.mSubTo);
+		values.put(PROFILE_SUB_FLAG,settings.mSubFlag);
 		values.put(PROFILE_MUL_ENABLE,settings.mMulEnable?1:0);
 		values.put(PROFILE_MUL_FROM,settings.mMulFrom);
 		values.put(PROFILE_MUL_TO,settings.mMulTo);
@@ -202,9 +210,11 @@ public class DataManager {
 		values.put(PROFILE_ADD_FROM,settings.mAddFrom);
 		values.put(PROFILE_ADD_TO,settings.mAddTo);
 		values.put(PROFILE_ADD_NUM,settings.mAddNum);
+		values.put(PROFILE_ADD_FLAG,settings.mAddFlag);
 		values.put(PROFILE_SUB_ENABLE,settings.mSubEnable?1:0);
 		values.put(PROFILE_SUB_FROM,settings.mSubFrom);
 		values.put(PROFILE_SUB_TO,settings.mSubTo);
+		values.put(PROFILE_SUB_FLAG,settings.mSubFlag);
 		values.put(PROFILE_MUL_ENABLE,settings.mMulEnable?1:0);
 		values.put(PROFILE_MUL_FROM,settings.mMulFrom);
 		values.put(PROFILE_MUL_TO,settings.mMulTo);
@@ -240,9 +250,11 @@ public class DataManager {
 		    				PROFILE_ADD_FROM,
 		    				PROFILE_ADD_TO,
 		    				PROFILE_ADD_NUM,
+		    				PROFILE_ADD_FLAG,
 		    				PROFILE_SUB_ENABLE,
 		    				PROFILE_SUB_FROM,
 		    				PROFILE_SUB_TO,
+		    				PROFILE_SUB_FLAG,
 		    				PROFILE_MUL_ENABLE,
 		    				PROFILE_MUL_FROM,
 		    				PROFILE_MUL_TO,
@@ -275,9 +287,11 @@ public class DataManager {
 		    	set.mAddFrom = cursor.getInt(cursor.getColumnIndex(PROFILE_ADD_FROM));
 		    	set.mAddTo = cursor.getInt(cursor.getColumnIndex(PROFILE_ADD_TO));
 		    	set.mAddNum = cursor.getInt(cursor.getColumnIndex(PROFILE_ADD_NUM));
+		    	set.mAddFlag = cursor.getInt(cursor.getColumnIndex(PROFILE_ADD_FLAG));
 		    	set.mSubEnable = (cursor.getInt(cursor.getColumnIndex(PROFILE_SUB_ENABLE)) > 0)?true:false;
 		    	set.mSubFrom = cursor.getInt(cursor.getColumnIndex(PROFILE_SUB_FROM));
 		    	set.mSubTo = cursor.getInt(cursor.getColumnIndex(PROFILE_SUB_TO));
+		    	set.mSubFlag = cursor.getInt(cursor.getColumnIndex(PROFILE_SUB_FLAG));
 		    	set.mMulEnable = (cursor.getInt(cursor.getColumnIndex(PROFILE_MUL_ENABLE)) > 0)?true:false;
 		    	set.mMulFrom = cursor.getInt(cursor.getColumnIndex(PROFILE_MUL_FROM));
 		    	set.mMulTo = cursor.getInt(cursor.getColumnIndex(PROFILE_MUL_TO));
@@ -308,9 +322,11 @@ public class DataManager {
 		    				PROFILE_ADD_FROM,
 		    				PROFILE_ADD_TO,
 		    				PROFILE_ADD_NUM,
+		    				PROFILE_ADD_FLAG,
 		    				PROFILE_SUB_ENABLE,
 		    				PROFILE_SUB_FROM,
 		    				PROFILE_SUB_TO,
+		    				PROFILE_SUB_FLAG,
 		    				PROFILE_MUL_ENABLE,
 		    				PROFILE_MUL_FROM,
 		    				PROFILE_MUL_TO,
@@ -343,9 +359,11 @@ public class DataManager {
 		    	set.mAddFrom = cursor.getInt(cursor.getColumnIndex(PROFILE_ADD_FROM));
 		    	set.mAddTo = cursor.getInt(cursor.getColumnIndex(PROFILE_ADD_TO));
 		    	set.mAddNum = cursor.getInt(cursor.getColumnIndex(PROFILE_ADD_NUM));
+		    	set.mAddFlag = cursor.getInt(cursor.getColumnIndex(PROFILE_ADD_FLAG));
 		    	set.mSubEnable = (cursor.getInt(cursor.getColumnIndex(PROFILE_SUB_ENABLE)) > 0)?true:false;
 		    	set.mSubFrom = cursor.getInt(cursor.getColumnIndex(PROFILE_SUB_FROM));
 		    	set.mSubTo = cursor.getInt(cursor.getColumnIndex(PROFILE_SUB_TO));
+		    	set.mSubFlag = cursor.getInt(cursor.getColumnIndex(PROFILE_SUB_FLAG));
 		    	set.mMulEnable = (cursor.getInt(cursor.getColumnIndex(PROFILE_MUL_ENABLE)) > 0)?true:false;
 		    	set.mMulFrom = cursor.getInt(cursor.getColumnIndex(PROFILE_MUL_FROM));
 		    	set.mMulTo = cursor.getInt(cursor.getColumnIndex(PROFILE_MUL_TO));
@@ -376,9 +394,11 @@ public class DataManager {
 	    				PROFILE_ADD_FROM,
 	    				PROFILE_ADD_TO,
 	    				PROFILE_ADD_NUM,
+	    				PROFILE_ADD_FLAG,
 	    				PROFILE_SUB_ENABLE,
 	    				PROFILE_SUB_FROM,
 	    				PROFILE_SUB_TO,
+	    				PROFILE_SUB_FLAG,
 	    				PROFILE_MUL_ENABLE,
 	    				PROFILE_MUL_FROM,
 	    				PROFILE_MUL_TO,
@@ -411,9 +431,11 @@ public class DataManager {
 	    	set.mAddFrom = cursor.getInt(cursor.getColumnIndex(PROFILE_ADD_FROM));
 	    	set.mAddTo = cursor.getInt(cursor.getColumnIndex(PROFILE_ADD_TO));
 	    	set.mAddNum = cursor.getInt(cursor.getColumnIndex(PROFILE_ADD_NUM));
+	    	set.mAddFlag = cursor.getInt(cursor.getColumnIndex(PROFILE_ADD_FLAG));
 	    	set.mSubEnable = (cursor.getInt(cursor.getColumnIndex(PROFILE_SUB_ENABLE)) > 0)?true:false;
 	    	set.mSubFrom = cursor.getInt(cursor.getColumnIndex(PROFILE_SUB_FROM));
 	    	set.mSubTo = cursor.getInt(cursor.getColumnIndex(PROFILE_SUB_TO));
+	    	set.mSubFlag = cursor.getInt(cursor.getColumnIndex(PROFILE_SUB_FLAG));
 	    	set.mMulEnable = (cursor.getInt(cursor.getColumnIndex(PROFILE_MUL_ENABLE)) > 0)?true:false;
 	    	set.mMulFrom = cursor.getInt(cursor.getColumnIndex(PROFILE_MUL_FROM));
 	    	set.mMulTo = cursor.getInt(cursor.getColumnIndex(PROFILE_MUL_TO));

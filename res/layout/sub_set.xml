@@ -48,6 +48,25 @@
 	        </EditText>
 
 	</LinearLayout>
-    <View android:layout_weight="4" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    	<CheckBox
+        android:id="@+id/borrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/borrow" />
+	<CheckBox
+        android:id="@+id/two_sub_single"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/two_sub_single" />
+	<CheckBox
+        android:id="@+id/two_sub_tens"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/two_sub_tens" />
+	<CheckBox
+        android:id="@+id/tens_sub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tens_sub" />
     <View android:layout_weight="1" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
 </LinearLayout>
