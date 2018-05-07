@@ -110,42 +110,275 @@ public class QuestionGen {
 		}
 	}
 	class AddGen implements IQuestion {
+		boolean checkCarry(int a, int b) {
+			int r1,r2;
+			int v1,v2;
+			v1 = a;
+			v2 = b;
 
-		@Override
-		public String getQuestion() {
+			do {
+				r1 = v1 % 10;
+				r2 = v2 % 10;
+				v1 = v1 / 10;
+				v2 = v2 / 10;
+				if(r1 + r2 >= 10) {
+					return true;
+				}
+			} while((v1 != 0) && (v2 != 0));
+			
+			return false;
+		}
+		int adjustCarry(int a, int b) {
+			int r1,r2;
+			int v1,v2;
+			int ret = 0;
+			int i = 0;
+			v1 = a;
+			v2 = b;
+
+			do {
+				r1 = v1 % 10;
+				r2 = v2 % 10;
+				v1 = v1 / 10;
+				v2 = v2 / 10;
+				if(r1 + r2 >= 10) {
+					r2 = 9-r1;
+					if(r2 > 0) {
+						r2 = mRa.nextInt(r2+1);
+					}
+				}
+				ret = r2*((int)(Math.pow(10, i))) + ret;
+				i++;
+			} while((v1 != 0) && (v2 != 0));
+			return ret;
+		}
+		String TwoAddSingle() {
+			int first = mRa.nextInt(90) + 10;
+			int second = mRa.nextInt(10);
+			if((mSet.mAddFlag & Settings.ADD_FLAG_NOCARRY) != 0) {
+				if(checkCarry(first, second)) {
+					second = adjustCarry(first, second);
+				}
+			}
+			return first+"+"+second;
+		}
+		String TwoAddTens() {
+			int first = mRa.nextInt(90) + 10;//10~99
+			int second = (mRa.nextInt(9)+1)*10;//10~90
+			if((mSet.mAddFlag & Settings.ADD_FLAG_NOCARRY) != 0) {
+				first = mRa.nextInt(80) + 10;//10~89
+				second = (mRa.nextInt(8)+1)*10;//10~80
+				if(checkCarry(first, second)) {
+					int v1 = 9 - first/10;
+					second = (mRa.nextInt(v1)+1)*10;
+					
+				}
+			}
+			return first+"+"+second;
+		}
+		String BothTens() {
+			int first = (mRa.nextInt(9)+1)*10;//10~90
+			int second = (mRa.nextInt(9)+1)*10;//10~90
+			if((mSet.mAddFlag & Settings.ADD_FLAG_NOCARRY) != 0) {
+				first = (mRa.nextInt(8)+1)*10;//10~80
+				second = (mRa.nextInt(8)+1)*10;//10~80
+				if(checkCarry(first, second)) {
+					int v1 = 9 - first/10;
+					second = (mRa.nextInt(v1)+1)*10;
+				}
+			}
+			return first+"+"+second;
+		}
+		String normal() {
 			String str = "";
 			int num = 0;
 			int max_num = mRa.nextInt(mSet.mAddNum - 1) + 2;
 			int v = mRa.nextInt(mSet.mAddTo-mSet.mAddFrom + 1) + mSet.mAddFrom;
+			int r = v;
 			str +=v;
 			num++;
 			while(num++ < max_num) {
 				v = mRa.nextInt(mSet.mAddTo-mSet.mAddFrom + 1) + mSet.mAddFrom;
+				if((mSet.mAddFlag & Settings.ADD_FLAG_NOCARRY) != 0) {
+					v = adjustCarry(r, v);
+				}
+				r+=v;
 				str +="+";
 				str +=v;
 			}
 			
 			return str;
 		}
+		@Override
+		public String getQuestion() {
+			String str = "";
+			if(mMethod != null && mMethod.size() > 0) {
+				if(mCounter >= mMethod.size()) {
+					mCounter = 0;
+				} 
+
+				String method = mMethod.get(mCounter);
+				if("twosingle".equals(method)) {
+					str = TwoAddSingle();
+				} else if("twotens".equals(method)) {
+					str = TwoAddTens();
+				} else if("bothtens".equals(method)) {
+					str = BothTens();
+				}
+				mCounter++;
+
+			} else {
+				str = normal();
+			}
+
+			return str;
+		}
+		ArrayList<String> mMethod;
+		int mCounter;
+
+		AddGen() {
+			mMethod = new ArrayList<String>();
+			mCounter = 0;
+			if((mSet.mAddFlag & Settings.ADD_FLAG_TWO_SINGLE) != 0) {
+				mMethod.add("twosingle");
+			}
+			if((mSet.mAddFlag & Settings.ADD_FLAG_TWO_TENS) != 0) {
+				mMethod.add("twotens");
+			}
+			if((mSet.mAddFlag & Settings.ADD_FLAG_BOTH_TENS) != 0) {
+				mMethod.add("bothtens");
+			}
+		}
 		
 	}
 	
 	class SubGen implements IQuestion {
-		@Override
-		public String getQuestion() {
+		boolean checkBorrow(int a, int b) {
+			int r1,r2;
+			int v1,v2;
+			v1 = a;
+			v2 = b;
+
+			do {
+				r1 = v1 % 10;
+				r2 = v2 % 10;
+				v1 = v1 / 10;
+				v2 = v2 / 10;
+				if(r1 < r2) {
+					return true;
+				}
+			} while((v1 != 0) && (v2 != 0));
+			
+			return false;
+		}
+		int adjustBorrow(int a, int b) {
+			int r1,r2;
+			int v1,v2;
+			int ret = 0;
+			int i = 0;
+			v1 = a;
+			v2 = b;
+
+			do {
+				r1 = v1 % 10;
+				r2 = v2 % 10;
+				v1 = v1 / 10;
+				v2 = v2 / 10;
+				if(r1 < r2) {
+					r2 = r1;
+					if(r2 > 0) {
+						r2 = mRa.nextInt(r2+1);
+					}
+				}
+				ret = r2*((int)(Math.pow(10, i))) + ret;
+				i++;
+			} while((v1 != 0) && (v2 != 0));
+			return ret;
+		}
+		String TwoSubSingle() {
+			int first = mRa.nextInt(90) + 10;
+			int second = mRa.nextInt(10);
+			if((mSet.mSubFlag & Settings.SUB_FLAG_NOBORROW) != 0) {
+				if(checkBorrow(first, second)) {
+					second = adjustBorrow(first, second);
+				}
+			}
+			return first+"-"+second;
+		}
+		String TwoSubTens() {
+			int first = mRa.nextInt(90) + 10;//10~99
+			int v1 = first/10;
+			int second = (mRa.nextInt(v1)+1)*10;//10~90
+
+			return first+"-"+second;
+		}
+		String BothTens() {
+			int first = (mRa.nextInt(9)+1)*10;//10~90
+			int v1 = first/10;
+			int second = (mRa.nextInt(v1)+1)*10;//10~90
+
+			return first+"-"+second;
+		}
+		String normal() {
 			String str = "";
 			int v1 = mRa.nextInt(mSet.mSubTo-mSet.mSubFrom + 1) + mSet.mSubFrom;
 			int v2 = mRa.nextInt(mSet.mSubTo-mSet.mSubFrom + 1) + mSet.mSubFrom;
-			if(v1 > v2) {
-				str += v1;
-				str += "-";
-				str += v2;
-			} else {
-				str += v2;
-				str += "-";
-				str += v1;
+
+			if(v1 < v2) {
+				int v = v1;
+				v1 = v2;
+				v2 = v;
+
 			}
+			if((mSet.mSubFlag & Settings.SUB_FLAG_NOBORROW) != 0) {
+				if(checkBorrow(v1, v2)) {
+					v2 = adjustBorrow(v1, v2);
+				}
+			}
+			str += v1;
+			str += "-";
+			str += v2;
 			return str;
+		}
+		@Override
+		public String getQuestion() {
+			String str = "";
+			if(mMethod != null && mMethod.size() > 0) {
+				if(mCounter >= mMethod.size()) {
+					mCounter = 0;
+				} 
+
+				String method = mMethod.get(mCounter);
+				if("twosingle".equals(method)) {
+					str = TwoSubSingle();
+				} else if("twotens".equals(method)) {
+					str = TwoSubTens();
+				} else if("bothtens".equals(method)) {
+					str = BothTens();
+				}
+				mCounter++;
+
+			} else {
+				str = normal();
+			}
+
+			return str;
+		}
+		ArrayList<String> mMethod;
+		int mCounter;
+
+		SubGen() {
+			mMethod = new ArrayList<String>();
+			mCounter = 0;
+			if((mSet.mSubFlag & Settings.SUB_FLAG_TWO_SINGLE) != 0) {
+				mMethod.add("twosingle");
+			}
+			if((mSet.mSubFlag & Settings.SUB_FLAG_TWO_TENS) != 0) {
+				mMethod.add("twotens");
+			}
+			if((mSet.mSubFlag & Settings.SUB_FLAG_BOTH_TENS) != 0) {
+				mMethod.add("bothtens");
+			}
 		}
 	}
 	

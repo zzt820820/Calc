@@ -46,7 +46,7 @@ public class AddFragment extends Fragment implements ContentCheck {
 			mSet.mAddNum = this.getResources().getInteger(R.integer.def_add_num);
 		}
 		mNum.setText("" +mSet.mAddNum);
-		if((mSet.mAddFlag & Settings.ADD_FLAG_CARRY) != 0) {
+		if((mSet.mAddFlag & Settings.ADD_FLAG_NOCARRY) != 0) {
 			mCarry.setChecked(true);
 		}
 		if((mSet.mAddFlag & Settings.ADD_FLAG_TWO_SINGLE) != 0) {
@@ -65,7 +65,7 @@ public class AddFragment extends Fragment implements ContentCheck {
 		mSet.mAddEnable = mEnable.isChecked();
 		mSet.mAddFlag = 0;
 		if(mCarry.isChecked()) {
-			mSet.mAddFlag |= Settings.ADD_FLAG_CARRY;
+			mSet.mAddFlag |= Settings.ADD_FLAG_NOCARRY;
 		}
 		if(mTwoAddSingle.isChecked()) {
 			mSet.mAddFlag |= Settings.ADD_FLAG_TWO_SINGLE;

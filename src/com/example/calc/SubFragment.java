@@ -40,7 +40,7 @@ public class SubFragment extends Fragment implements ContentCheck {
 		}
 		mFrom.setText("" + mSet.mSubFrom);
 		mTo.setText("" + mSet.mSubTo);
-		if((mSet.mSubFlag & Settings.SUB_FLAG_BORROW) != 0) {
+		if((mSet.mSubFlag & Settings.SUB_FLAG_NOBORROW) != 0) {
 			mBorrow.setChecked(true);
 		}
 		if((mSet.mSubFlag & Settings.SUB_FLAG_TWO_SINGLE) != 0) {
@@ -59,7 +59,7 @@ public class SubFragment extends Fragment implements ContentCheck {
 		mSet.mSubEnable = mEnable.isChecked();
 		mSet.mSubFlag = 0;
 		if(mBorrow.isChecked()) {
-			mSet.mSubFlag |= Settings.SUB_FLAG_BORROW;
+			mSet.mSubFlag |= Settings.SUB_FLAG_NOBORROW;
 		}
 		if(mTwoSubSingle.isChecked()) {
 			mSet.mSubFlag |= Settings.SUB_FLAG_TWO_SINGLE;

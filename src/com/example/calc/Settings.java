@@ -4,12 +4,12 @@ public class Settings {
 	static public final int MODE_TOTAL_TIME = 1;
 	static public final int MODE_PER_TIME = 2;
 	
-	static public final int ADD_FLAG_CARRY = 0x01;
+	static public final int ADD_FLAG_NOCARRY = 0x01;
 	static public final int ADD_FLAG_TWO_SINGLE = 0x02;
 	static public final int ADD_FLAG_TWO_TENS = 0x04;
 	static public final int ADD_FLAG_BOTH_TENS = 0x08;
 	
-	static public final int SUB_FLAG_BORROW = 0x01;
+	static public final int SUB_FLAG_NOBORROW = 0x01;
 	static public final int SUB_FLAG_TWO_SINGLE = 0x02;
 	static public final int SUB_FLAG_TWO_TENS = 0x04;
 	static public final int SUB_FLAG_BOTH_TENS = 0x08;
