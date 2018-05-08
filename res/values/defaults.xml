@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="def_mode">total</string>
+    <string name="def_mode" translatable="false" >total</string>
     <integer name="def_total_time">300</integer>
     <integer name="def_per_time">10</integer>
     <bool name="def_add_enable">true</bool>
