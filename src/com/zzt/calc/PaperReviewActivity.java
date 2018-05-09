@@ -1,6 +1,8 @@
-package com.example.calc;
+package com.zzt.calc;
 
 import java.util.List;
+
+import com.zzt.calc.R;
 
 import android.app.Activity;
 import android.content.Intent;

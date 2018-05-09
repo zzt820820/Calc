@@ -1,4 +1,6 @@
-package com.example.calc;
+package com.zzt.calc;
+
+import com.zzt.calc.R;
 
 import android.app.Activity;
 import android.app.AlertDialog;

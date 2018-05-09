@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.calc"
+    package="com.zzt.calc"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -9,13 +9,13 @@
         android:targetSdkVersion="19" />
 
     <application
-        android:name="com.example.calc.AppContext"
+        android:name="com.zzt.calc.AppContext"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name="com.zzt.calc.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,23 +24,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SettingsActivity"
+            android:name="com.zzt.calc.SettingsActivity"
 			>
         </activity>
         <activity
-            android:name=".PaperActivity"
+            android:name="com.zzt.calc.PaperActivity"
 			>
         </activity>
         <activity
-            android:name=".ProfileActivity"
+            android:name="com.zzt.calc.ProfileActivity"
 			>
         </activity>
         <activity
-            android:name=".PapersActivity"
+            android:name="com.zzt.calc.PapersActivity"
 			>
         </activity>
         <activity
-            android:name=".PaperReviewActivity"
+            android:name="com.zzt.calc.PaperReviewActivity"
 			>
         </activity>
     </application>

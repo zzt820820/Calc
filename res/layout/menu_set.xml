@@ -8,7 +8,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     android:gravity="top|center"
-    tools:context="com.example.calc.MainActivity" >
+    tools:context="com.zzt.calc.MainActivity" >
     <View android:layout_weight="1" android:layout_width="match_parent" android:layout_height="0dp"/>
 	<LinearLayout 
 	    android:orientation="horizontal"

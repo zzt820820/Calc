@@ -1,4 +1,4 @@
-package com.example.calc;
+package com.zzt.calc;
 
 public class Question {
 	String mQuestion;

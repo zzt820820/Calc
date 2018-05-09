@@ -1,4 +1,4 @@
-package com.example.calc;
+package com.zzt.calc;
 
 public class Paper {
 	public int mId;

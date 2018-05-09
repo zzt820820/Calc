@@ -1,4 +1,4 @@
-package com.example.calc;
+package com.zzt.calc;
 
 public class Settings {
 	static public final int MODE_TOTAL_TIME = 1;

@@ -1,4 +1,4 @@
-package com.example.calc;
+package com.zzt.calc;
 
 import java.util.ArrayList;
 import java.util.Random;

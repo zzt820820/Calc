@@ -1,4 +1,4 @@
-package com.example.calc;
+package com.zzt.calc;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -6,6 +6,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.zzt.calc.R;
 
 import android.app.Activity;
 import android.app.AlertDialog;
