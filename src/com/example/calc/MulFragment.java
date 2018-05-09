@@ -54,18 +54,30 @@ public class MulFragment extends Fragment implements ContentCheck {
 				return false;
 			}
 			mSet.mMulFrom = Integer.parseInt(from);
+			if(mSet.mMulFrom < 0) {
+				Utils.Alert(this.getActivity(), R.string.invalid_number);
+				return false;
+			}
 			
 			if(to == null || to.isEmpty()) {
 				Utils.Alert(this.getActivity(), R.string.to_empty);
 				return false;
 			}
 			mSet.mMulTo = Integer.parseInt(to);
+			if(mSet.mMulTo < 0) {
+				Utils.Alert(this.getActivity(), R.string.invalid_number);
+				return false;
+			}
 			
 			if(num == null || num.isEmpty()) {
 				Utils.Alert(this.getActivity(), R.string.num_empty);
 				return false;
 			}
 			mSet.mMulNum = Integer.parseInt(num);
+			if(mSet.mMulNum < 0) {
+				Utils.Alert(this.getActivity(), R.string.invalid_number);
+				return false;
+			}
 			
 			if(mSet.mMulFrom >= mSet.mMulTo) {
 				Utils.Alert(this.getActivity(), R.string.invalid_from_to);

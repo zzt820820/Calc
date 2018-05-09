@@ -83,6 +83,10 @@ public class ModeFragment extends Fragment implements OnCheckedChangeListener, C
 			return false;
 		}
 		mSet.mTotalNum = Integer.parseInt(str);
+		if(mSet.mTotalNum < 0) {
+			Utils.Alert(this.getActivity(), R.string.invalid_number);
+			return false;
+		}
 		return true;
 	}
 

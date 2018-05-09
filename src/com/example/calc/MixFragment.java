@@ -96,12 +96,20 @@ public class MixFragment extends Fragment implements ContentCheck {
 				return false;
 			}
 			mSet.mMixFrom = Integer.parseInt(from);
+			if(mSet.mMixFrom < 0) {
+				Utils.Alert(this.getActivity(), R.string.invalid_number);
+				return false;
+			}
 			
 			if(to == null || to.isEmpty()) {
 				Utils.Alert(this.getActivity(), R.string.to_empty);
 				return false;
 			}
 			mSet.mMixTo = Integer.parseInt(to);
+			if(mSet.mMixTo < 0) {
+				Utils.Alert(this.getActivity(), R.string.invalid_number);
+				return false;
+			}
 			
 			if(num == null || num.isEmpty()) {
 				Utils.Alert(this.getActivity(), R.string.num_empty);

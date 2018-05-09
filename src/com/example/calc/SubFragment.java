@@ -80,12 +80,20 @@ public class SubFragment extends Fragment implements ContentCheck {
 				return false;
 			}
 			mSet.mSubFrom = Integer.parseInt(from);
+			if(mSet.mSubFrom < 0) {
+				Utils.Alert(this.getActivity(), R.string.invalid_number);
+				return false;
+			}
 			
 			if(to == null || to.isEmpty()) {
 				Utils.Alert(this.getActivity(), R.string.to_empty);
 				return false;
 			}
 			mSet.mSubTo = Integer.parseInt(to);
+			if(mSet.mSubTo < 0) {
+				Utils.Alert(this.getActivity(), R.string.invalid_number);
+				return false;
+			}
 			
 			if(mSet.mSubFrom >= mSet.mSubTo) {
 				Utils.Alert(this.getActivity(), R.string.invalid_from_to);

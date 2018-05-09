@@ -83,5 +83,6 @@
     <string name="two_sub_single">Two sub single</string>
     <string name="two_sub_tens">Two sub tens</string>
     <string name="tens_sub">Tens sub</string>
+    <string name="invalid_number">Please input a valid number.</string>
 
 </resources>

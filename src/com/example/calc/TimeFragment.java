@@ -47,6 +47,10 @@ public class TimeFragment extends Fragment implements ContentCheck {
 			return false;
 		}
 		mSet.mTimeHour = Integer.parseInt(str);
+		if(mSet.mTimeHour < 0) {
+			Utils.Alert(this.getActivity(), R.string.invalid_number);
+			return false;
+		}
 		
 		str = mMin.getText().toString();
 		if(str == null || str.isEmpty()) {
@@ -54,6 +58,10 @@ public class TimeFragment extends Fragment implements ContentCheck {
 			return false;
 		}
 		mSet.mTimeMin = Integer.parseInt(str);
+		if(mSet.mTimeMin < 0) {
+			Utils.Alert(this.getActivity(), R.string.invalid_number);
+			return false;
+		}
 		
 		str = mSec.getText().toString();
 		if(str == null || str.isEmpty()) {
@@ -61,6 +69,14 @@ public class TimeFragment extends Fragment implements ContentCheck {
 			return false;
 		}
 		mSet.mTimeSec = Integer.parseInt(str);
+		if(mSet.mTimeSec < 0) {
+			Utils.Alert(this.getActivity(), R.string.invalid_number);
+			return false;
+		}
+		if((mSet.mTimeSec == 0) && (mSet.mTimeMin == 0) && (mSet.mTimeHour == 0)) {
+			Utils.Alert(this.getActivity(), R.string.invalid_number);
+			return false;
+		}
 		return true;
 	}
 

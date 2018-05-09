@@ -83,5 +83,6 @@
     <string name="two_sub_single">两位减一位</string>
     <string name="two_sub_tens">两位减整十</string>
     <string name="tens_sub">整十减法</string>
+    <string name="invalid_number">请输入一个有效的数字.</string>
 
 </resources>
